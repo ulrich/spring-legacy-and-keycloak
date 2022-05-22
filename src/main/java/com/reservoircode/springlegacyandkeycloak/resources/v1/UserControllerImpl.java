@@ -1,4 +1,4 @@
-package com.reservoircode.springlegacyandkeycloak.resources;
+package com.reservoircode.springlegacyandkeycloak.resources.v1;
 
 import com.reservoircode.springlegacyandkeycloak.model.User;
 import org.springframework.http.ResponseEntity;
