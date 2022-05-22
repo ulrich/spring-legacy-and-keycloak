@@ -1,4 +1,4 @@
-package com.reservoircode.springlegacyandkeycloak.resources.v2;
+package com.reservoircode.springlegacyandkeycloak.resources;
 
 import com.reservoircode.springlegacyandkeycloak.model.User;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(value = "/api/v2/user")
-public class UserControllerImpl {
+public class UserControllerV2Impl {
 
     @GetMapping
     public ResponseEntity<User> getUser(String id) {

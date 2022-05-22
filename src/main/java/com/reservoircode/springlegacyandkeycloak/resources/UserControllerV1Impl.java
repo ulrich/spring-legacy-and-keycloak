@@ -1,4 +1,4 @@
-package com.reservoircode.springlegacyandkeycloak.resources.v1;
+package com.reservoircode.springlegacyandkeycloak.resources;
 
 import com.reservoircode.springlegacyandkeycloak.model.User;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @RestController
 @RequestMapping(value = "/api/v1/user")
-public class UserControllerImpl {
+public class UserControllerV1Impl {
 
     @GetMapping
     public ResponseEntity<User> getUser(@RequestHeader("Authorization") String authorization, String id) {
