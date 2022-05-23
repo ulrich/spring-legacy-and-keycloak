@@ -1,6 +1,8 @@
 package com.reservoircode.springlegacyandkeycloak.resources;
 
 import com.reservoircode.springlegacyandkeycloak.model.User;
+import com.reservoircode.springlegacyandkeycloak.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -14,7 +16,10 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 
 @RestController
 @RequestMapping(value = "/api/v1/user")
-public class UserControllerV1Impl {
+public class UserControllerV1 {
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public ResponseEntity<User> getUser(@RequestHeader("Authorization") String authorization, String id) {
@@ -33,6 +38,6 @@ public class UserControllerV1Impl {
                     .build();
         }
         return ResponseEntity
-                .ok(new User("1", "Ulrich"));
+                .ok(userService.getUser(id));
     }
 }

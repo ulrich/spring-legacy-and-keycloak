@@ -10,11 +10,7 @@ import static com.reservoircode.springlegacyandkeycloak.config.KeycloakSecurityC
 
 public class CustomKeycloakAuthenticationProcessingFilter extends KeycloakAuthenticationProcessingFilter {
 
-    private static final Logger logger = LoggerFactory.getLogger(CustomKeycloakAuthenticationProcessingFilter.class);
-
     public CustomKeycloakAuthenticationProcessingFilter(AuthenticationManager authenticationManager) {
         super(authenticationManager, new AntPathRequestMatcher(VALIDATING_BY_KEYCLOAK));
-
-        logger.info("Registering a custom Keycloak authentication processing filter for '/api/v1/*' compatibility");
     }
 }

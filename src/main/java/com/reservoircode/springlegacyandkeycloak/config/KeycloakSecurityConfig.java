@@ -35,6 +35,8 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
     @Bean
     @Override
     protected KeycloakAuthenticationProcessingFilter keycloakAuthenticationProcessingFilter() throws Exception {
+        logger.info("Registering a custom Keycloak authentication processing filter for '/api/v1/*' compatibility");
+
         return new CustomKeycloakAuthenticationProcessingFilter(authenticationManagerBean());
     }
 
